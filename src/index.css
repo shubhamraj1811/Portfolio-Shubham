@@ -7,6 +7,9 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
   --color-card: hsl(var(--card));
 
@@ -65,30 +68,37 @@
   }
 }
 
-
 @layer base {
-  :root{
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+  :root {
+    /* Light Mode */
+    --background: 215 40% 98%; /* Very light icy blue */
+    --foreground: 215 50% 10%; /* Very dark navy */
 
-    --card: 0 0% 100%;
+    --card: 0 0% 100%; /* Pure white */
 
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 215 100% 41%; /* #0056D2 (Royal Blue) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --border: 214 32% 91%;
+    --secondary: 185 75% 52%; /* #28D1E0 (Cyan) */
+    --secondary-foreground: 215 50% 10%; /* Very dark navy */
+
+    --border: 215 30% 90%; /* Light blueish-grey */
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    /* Dark Mode */
+    --background: 215 60% 5%; /* Deep midnight blue */
+    --foreground: 185 30% 90%; /* Soft cyan tinted white */
 
-    --card: 222 47% 8%;
+    --card: 215 50% 8%; /* Slightly lighter than background */
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 215 100% 41%; /* #0056D2 (Royal Blue) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --border: 217 33% 20%;
+    --secondary: 185 75% 52%; /* #28D1E0 (Cyan) */
+    --secondary-foreground: 215 60% 5%; /* Deep midnight blue */
+
+    --border: 215 50% 15%; /* Dark blueish border */
   }
 
   * {
@@ -101,15 +111,15 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
-
-  /* Adding Media Queries */
 
   @media (width >= 640px) {
     max-width: 640px;
@@ -130,7 +140,8 @@
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  /* Updated to use the Cyan hex color with opacity */
+  text-shadow: 0 0 10px rgba(40, 209, 224, 0.5); 
 }
 
 @utility card-hover {
@@ -146,8 +157,9 @@
 
 @utility cosmic-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-         hover:scale-105 active:scale-95; 
+         transition-all duration-300 
+         hover:shadow-[0_0_15px_rgba(40,209,224,0.6)] /* Updated hover glow to Cyan */
+         hover:scale-105 active:scale-95;
 }
 
 @utility star {
