@@ -1,4 +1,7 @@
-const skills = [
+import { act, useState } from "react"; // React hook for managing state
+import { cn } from "@/lib/utils"; // utility for conditional class names
+
+const skills = [ // Skills data
   // Frontend skills
   { name: "HTML/CSS", Level: 95, category: "Frontend" },
   { name: "JavaScript", Level: 90, category: "Frontend" },
@@ -20,7 +23,17 @@ const skills = [
   { name: "Android Studio", Level: 75, category: "Tools" },
 ];
 
+const categories = ["All", "Frontend", "Backend", "Tools"];
+
 export const SkillsSection = () => {
+  // State to track the active category filter
+  const [activeCategory, setActiveCategory] = useState("All");
+  // Filter skills based on the active category
+  const filteredSkills = skills.filter(
+    (skill) => activeCategory === "All" || skill.category === activeCategory
+  );
+
+  // 
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/300"
     > {/* here */}
@@ -29,10 +42,27 @@ export const SkillsSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           My <span className="text-primary"> Skills </span>
         </h2>
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category, key) => (
+            <button
+            key={key}
+            onClick={ () => setActiveCategory(category)}
+            className={cn(
+              "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+              activeCategory === category
+              ? "bg-secondary text-primary-foreground"
+              : "bg-secondary/50 text-foreground hover:bg-secondary/90 hover:font-bold"
+            )}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, key) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredSkills.map((skill, key) => (
             <div 
             key={key}
             className="bg-card p-6 rounded-lg shadow-xs card-hover"

@@ -41,7 +41,7 @@ export const AboutSection = () => {
                 href=""
                 className="px-6 py-2 rounded-full border border-primary text-primary transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:text-white hover:font-bold hover:shadow-[0_0_15px_rgba(40,209,224,0.9)]"
               >
-                Download CV
+                Download Resume
               </a>
             </div>
           </div>
