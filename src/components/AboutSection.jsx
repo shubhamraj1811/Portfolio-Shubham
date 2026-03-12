@@ -25,21 +25,21 @@ export const AboutSection = () => {
 
             <p className="text-muted-foreground ">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reiciendis minus neque sint dolorem quam temporibus praesentium
-              officia eveniet possimus fugiat?
+              Reiciendis minus neque sint dolo
             </p>
 
             {/* buttons here */}
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
-                {" "}
+              <a
+              href="#contact"
+              className="px-6 py-2 rounded-full border border-primary bg-primary text-white transition-all duration-300 ease-in-out hover:scale-105 hover:bg-transparent hover:text-primary hover:font-bold hover:shadow-[0_0_15px_rgba(40,209,224,0.9)]">
                 Get In Touch
               </a>
 
               <a
                 href=""
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                className="px-6 py-2 rounded-full border border-primary text-primary transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:text-white hover:font-bold hover:shadow-[0_0_15px_rgba(40,209,224,0.9)]"
               >
                 Download CV
               </a>
@@ -59,9 +59,6 @@ export const AboutSection = () => {
                   <p className="text-muted-foreground">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Similique tenetur voluptatem reprehenderit quas est
-                    repellendus nemo, placeat earum qui? Dignissimos libero
-                    recusandae nulla repudiandae ipsa sint ipsam qui consequatur
-                    mollitia.
                   </p>
                 </div>
               </div>
@@ -77,10 +74,7 @@ export const AboutSection = () => {
                   <h4 className="font-semibold text-lg">Android Development</h4>
                   <p className="text-muted-foreground">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Similique tenetur voluptatem reprehenderit quas est
-                    repellendus nemo, placeat earum qui? Dignissimos libero
-                    recusandae nulla repudiandae ipsa sint ipsam qui consequatur
-                    mollitia.
+                    Similique 
                   </p>
                 </div>
               </div>
@@ -96,10 +90,7 @@ export const AboutSection = () => {
                   <h4 className="font-semibold text-lg">Android Development</h4>
                   <p className="text-muted-foreground">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Similique tenetur voluptatem reprehenderit quas est
-                    repellendus nemo, placeat earum qui? Dignissimos libero
-                    recusandae nulla repudiandae ipsa sint ipsam qui consequatur
-                    mollitia.
+                    Similique tenetur voluptatem reprehenderit quas
                   </p>
                 </div>
               </div>
